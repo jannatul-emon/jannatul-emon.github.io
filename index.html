@@ -83,8 +83,10 @@ nav.links a:hover{color:var(--ink)}
 .who img{width:68px;height:68px;border-radius:50%;object-fit:cover;object-position:top;background:var(--soft);border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
 .who strong{display:block;font-family:var(--display);font-stretch:108%;font-size:17px}
 .who span{font-size:14px;color:var(--muted)}
-.hero h1{font-size:clamp(38px,5.8vw,70px);font-weight:900;font-stretch:118%;letter-spacing:-.02em;margin-block:22px 20px}
-.hero h1 em{font-style:normal;color:var(--accent)}
+.hero h1{font-size:clamp(36px,4.8vw,58px);font-weight:900;font-stretch:112%;letter-spacing:-.02em;line-height:1.08;margin-block:24px 16px}
+.hero h1 em{font-style:normal;color:var(--good);white-space:nowrap}
+.tagline{font-size:clamp(18px,2vw,21px);font-weight:500;margin-bottom:14px}
+.tagline strong{color:var(--good);font-weight:700}
 .hero-text{min-width:0}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
@@ -287,7 +289,8 @@ footer a{color:var(--muted)}
         <img src="assets/jannatul-emon.png" alt="Jannatul Islam Emon" width="68" height="68">
         <div><strong>Jannatul Islam Emon</strong><span>Digital Marketer &amp; Mentor · Founder, Gorila Ad</span></div>
       </div>
-      <h1>I get local service businesses found on <em>Google Maps</em> and in <em>AI search</em>.</h1>
+      <h1>Plumbers &amp; HVAC: <em>3x More Jobs</em> in 12 Weeks.</h1>
+      <p class="tagline">Performance-based local SEO. <strong>Only pay if you see results.</strong></p>
       <p class="lead">I've done 5+ years of freelance digital marketing, with a focus on local SEO for plumbing, HVAC and duct cleaning companies. For BlueGuard Duct Cleaning in Oshawa, customers grew by more than 230% in 4 months. Today ChatGPT names them the top pick in town.</p>
       <div class="cta-row">
         <a class="btn primary" href="#contact">Get a free local audit</a>
@@ -597,6 +600,7 @@ footer a{color:var(--muted)}
 
   // Ranking grid (illustration)
   var grid=document.getElementById('grid'),cells=[],N=7,C=3;
+  var AFTER=[[4,3,3,3,3,3,4],[3,3,2,2,2,3,3],[3,2,1,1,1,2,3],[3,2,1,1,1,2,3],[3,2,1,1,1,2,3],[3,3,2,2,2,3,3],[4,3,3,3,3,3,4]];
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   for(var i=0;i<N;i++)for(var j=0;j<N;j++){
     var dist=Math.sqrt((i-C)*(i-C)+(j-C)*(j-C)),noise=((i*7+j)*37)%3-1;
@@ -604,7 +608,7 @@ footer a{color:var(--muted)}
     el.className='cell'+(i===C&&j===C?' center':'');
     el.style.transitionDelay=reduce?'0ms':Math.round(dist*70)+'ms';
     grid.appendChild(el);
-    cells.push({el:el,before:Math.round(9+dist*3+noise*2),after:Math.max(1,Math.round(1+dist*1.5+noise*0.6))});
+    cells.push({el:el,before:Math.round(9+dist*3+noise*2),after:AFTER[i][j]});
   }
   function cls(r){return r<=3?'good':r<=10?'mid':'bad';}
   function render(view){
