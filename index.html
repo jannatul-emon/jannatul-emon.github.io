@@ -600,7 +600,7 @@ footer a{color:var(--muted)}
 
   // Ranking grid (illustration)
   var grid=document.getElementById('grid'),cells=[],N=7,C=3;
-  var AFTER=[[4,3,3,3,3,3,4],[3,3,2,2,2,3,3],[3,2,1,1,1,2,3],[3,2,1,1,1,2,3],[3,2,1,1,1,2,3],[3,3,2,2,2,3,3],[4,3,3,3,3,3,4]];
+  var AFTER=[[4,3,3,3,3,3,4],[3,3,2,2,2,3,3],[3,2,1,1,1,2,3],[3,2,1,1,1,2,3],[3,2,1,1,1,2,3],[3,3,2,2,2,3,4],[4,3,3,3,4,4,4]];
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   for(var i=0;i<N;i++)for(var j=0;j<N;j++){
     var dist=Math.sqrt((i-C)*(i-C)+(j-C)*(j-C)),noise=((i*7+j)*37)%3-1;
