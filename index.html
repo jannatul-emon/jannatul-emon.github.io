@@ -83,11 +83,23 @@ nav.links a:hover{color:var(--ink)}
 .who img{width:68px;height:68px;border-radius:50%;object-fit:cover;object-position:top;background:var(--soft);border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
 .who strong{display:block;font-family:var(--display);font-stretch:108%;font-size:17px}
 .who span{font-size:14px;color:var(--muted)}
-.hero h1{font-size:clamp(36px,4.8vw,58px);font-weight:900;font-stretch:112%;letter-spacing:-.02em;line-height:1.08;margin-block:24px 16px}
+.hero h1{font-size:clamp(36px,4.8vw,58px);font-weight:900;font-stretch:112%;letter-spacing:-.02em;line-height:1.08;margin-block:20px 16px}
 .hero h1 em{font-style:normal;color:var(--good);white-space:nowrap}
 .tagline{font-size:clamp(18px,2vw,21px);font-weight:500;margin-bottom:14px}
 .tagline strong{color:var(--good);font-weight:700}
 .hero-text{min-width:0}
+.proof{display:inline-flex;align-items:center;flex-wrap:wrap;gap:6px 12px;margin-top:22px;padding:7px 16px 7px 7px;background:var(--surface);border:1px solid var(--line);border-radius:999px;font-size:14.5px;color:var(--ink);box-shadow:0 8px 22px -16px rgba(10,30,40,.45);max-width:100%}
+.proof b{font-weight:700}
+.proof .ok{width:26px;height:26px;border-radius:50%;background:var(--good);color:#fff;display:grid;place-items:center;flex:none}
+.proof .sep{width:1px;height:16px;background:var(--line)}
+.proof .rate{display:inline-flex;align-items:center;gap:6px}
+.proof .stars{color:var(--mid);letter-spacing:1.5px;font-size:13.5px}
+.proof .ret{display:inline-flex;align-items:center;gap:5px;color:var(--muted)}
+.proof .ret svg,.proof .ret b{color:var(--good)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:440px){.proof{flex-wrap:nowrap;font-size:12.5px;gap:8px;padding:7px 13px;white-space:nowrap}.proof .ok{display:none}.proof .stars{font-size:11.5px;letter-spacing:.5px}.proof .rate{gap:4px}.proof .sep{height:13px}}
+@media (max-width:350px){.proof{font-size:11.5px;gap:5px;padding:6px 9px}.proof .stars{font-size:10px;letter-spacing:0}}
+
 .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .tag{font-family:var(--mono);font-size:12.5px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 11px;color:var(--muted)}
@@ -318,6 +330,14 @@ footer a{color:var(--muted)}
       <div class="who">
         <img src="assets/jannatul-emon.png" alt="Jannatul Islam Emon" width="68" height="68">
         <div><strong>Jannatul Islam Emon</strong><span>AI Local SEO Expert</span></div>
+      </div>
+      <div class="proof" role="group" aria-label="Client feedback">
+        <span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span><b class="tabnum">125+</b> Reviews</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span class="rate"><span class="stars" aria-hidden="true">★★★★★</span><b class="tabnum">5.0</b><span class="sr">out of 5</span></span>
+        <span class="sep" aria-hidden="true"></span>
+        <span class="ret"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b class="tabnum">98%</b> retention</span>
       </div>
       <h1>Plumbers, HVAC &amp; Cleaners: Get <em>3x More Leads</em> in 6 Months</h1>
       <p class="tagline">AI local SEO &amp; Lead Generation Services.</p>
